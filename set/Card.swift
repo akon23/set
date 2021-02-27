@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Card: Equatable {
+struct Card: Equatable, Hashable {
   
-  private(set) var identifier: Int
+  private var identifier: Int
   
   private static var identifierFactory = 0;
   private static func getUniqueIdentifier() -> Int {
@@ -26,6 +26,10 @@ struct Card: Equatable {
 extension Card {
   static func == (lhs: Self, rhs: Self) -> Bool {
     return lhs.identifier == rhs.identifier
+  }
+  
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(identifier)
   }
 }
 
