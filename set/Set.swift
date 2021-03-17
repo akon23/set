@@ -17,7 +17,7 @@ struct Set {
       let card = Card()
       playingCards += [card]
     }
-    for _ in 0..<12 {
+    for _ in 0..<69 {
       let card = Card()
       dealCards += [card]
     }
